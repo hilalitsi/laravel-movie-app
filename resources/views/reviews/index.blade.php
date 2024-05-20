@@ -45,35 +45,36 @@
                                     </div>
                                 </div>
 
+                                @foreach ($reviews as $review)
                                 <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
                                     <div class="col-span-1 flex items-center">
                                         <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                                            <div class="w-12 rounded-md">
-                                                <img src="src/images/movie/movie-01.jpg" alt="Product" />
-                                            </div>
                                             <p class="text-sm font-medium text-black dark:text-white">
-                                                01
+                                                {{ $review['id']}}
                                             </p>
                                         </div>
                                     </div>
                                     <div class="col-span-2 flex items-center">
+                                        <div class="w-12 rounded-md">
+                                            <img src="src/images/movie/{{ $review['poster'] }}" alt="Product" />
+                                        </div>
                                         <p class="text-sm font-medium text-black dark:text-white">
-                                            Jojo Bizarre Adventure
+                                            {{ $review['movie']}}
                                         </p>
                                     </div>
                                     <div class="col-span-1 flex items-center">
                                         <p class="text-sm font-medium text-black dark:text-white">
-                                            Hirohito
+                                            {{ $review['user']}}
                                         </p>
                                     </div>
                                     <div class="col-span-1 flex items-center">
                                         <p class="text-sm font-medium text-black dark:text-white">
-                                            8,5
+                                            {{ $review['rating']}}
                                         </p>
                                     </div>
                                     <div class="col-span-2 flex items-center">
                                         <p class="text-sm font-medium text-black dark:text-white">
-                                            1987-01-01
+                                            {{ $review['date']}}
                                         </p>
                                     </div>
                                     <div class="col-span-1 flex items-center">
@@ -83,162 +84,7 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                                    <div class="col-span-1 flex items-center">
-                                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                                            <div class="w-12 rounded-md">
-                                                <img src="src/images/movie/movie-02.jpg" alt="Product" />
-                                            </div>
-                                            <p class="text-sm font-medium text-black dark:text-white">
-                                                02
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-2 items-center sm:flex">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            Noragami
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            Kim Il Sung
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            7,8
-                                        </p>
-                                    </div>
-                                    <div class="col-span-2 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            2010-12-06
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <div class="flex items-center space-x-1">
-                                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                                    <div class="col-span-1 flex items-center">
-                                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                                            <div class="w-12 rounded-md">
-                                                <img src="src/images/movie/movie-03.jpg" alt="Product" />
-                                            </div>
-                                            <p class="text-sm font-medium text-black dark:text-white">
-                                                03
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-2 items-center sm:flex">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            Wind Breaker
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            Mao Zedong
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            7,7
-                                        </p>
-                                    </div>
-                                    <div class="col-span-2 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            2021-01-13
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <div class="flex items-center space-x-1">
-                                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                                    <div class="col-span-1 flex items-center">
-                                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                                            <div class="w-12 rounded-md">
-                                                <img src="src/images/movie/movie-04.jpg" alt="Product" />
-                                            </div>
-                                            <p class="text-sm font-medium text-black dark:text-white">
-                                                04
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-2 items-center sm:flex">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            SPY X Family
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 items-center sm:flex">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            Takefusa Kubo
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 items-center sm:flex">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            8,2
-                                        </p>
-                                    </div>
-                                    <div class="col-span-2 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            2019-03-25
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <div class="flex items-center space-x-1">
-                                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                                    <div class="col-span-1 flex items-center">
-                                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-                                            <div class="w-12 rounded-md">
-                                                <img src="src/images/movie/movie-05.jpeg" alt="Product" />
-                                            </div>
-                                            <p class="text-sm font-medium text-black dark:text-white">
-                                                05
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-2 items-center sm:flex">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            Attack on Titan
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            Ucup
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            9,1
-                                        </p>
-                                    </div>
-                                    <div class="col-span-2 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            2009-09-09
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <div class="flex items-center space-x-1">
-                                            <a href="" class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Edit</a>
-                                            <a href="" class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
 
                             <!-- ====== Table Two End -->
