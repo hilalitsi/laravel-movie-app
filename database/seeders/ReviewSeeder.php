@@ -15,8 +15,7 @@ class ReviewSeeder extends Seeder
     {
         Review::create([
             'id' => 1,
-            'title' => 'Jojo Bizarre Adventure',
-            'movie_id' => '01',
+            'movie_id' => '1',
             'poster' => 'movie-01.jpg',
             'user' => 'Hirohito',
             'rating' => '8,5',
@@ -25,8 +24,7 @@ class ReviewSeeder extends Seeder
 
         Review::create([
             'id' => 2,
-            'title' => 'Noragami',
-            'movie_id' => '02',
+            'movie_id' => '2',
             'poster' => 'movie-02.jpg',
             'user' => 'Kim Il Sung',
             'rating' => '7,8',
@@ -35,8 +33,7 @@ class ReviewSeeder extends Seeder
 
         Review::create([
             'id' => 3,
-            'title' => 'Wind Breaker',
-            'movie_id' => '03',
+            'movie_id' => '3',
             'poster' => 'movie-03.jpg',
             'user' => 'Mao Zedong',
             'rating' => '7,7',
@@ -45,8 +42,7 @@ class ReviewSeeder extends Seeder
 
         Review::create([
             'id' => 4,
-            'title' => 'Spy X Family',
-            'movie_id' => '04',
+            'movie_id' => '4',
             'poster' => 'movie-04.jpg',
             'user' => 'Takefusa Kubo',
             'rating' => '8,2',
@@ -55,8 +51,7 @@ class ReviewSeeder extends Seeder
 
         Review::create([
             'id' => 5,
-            'title' => 'Attack on Titan',
-            'movie_id' => '05',
+            'movie_id' => '5',
             'poster' => 'movie-05.jpeg',
             'user' => 'Ucup',
             'rating' => '9,1',

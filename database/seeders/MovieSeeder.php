@@ -36,5 +36,21 @@ class MovieSeeder extends Seeder
             'poster' => 'movie-03.jpg',
             'synopsis' => 'Haruka Sakura wants nothing to do with weaklings—hes only interested in the strongest of the strong.',
         ]);
+
+        Movie::create([
+            'id' => 4,
+            'title' => 'Spy X Family',
+            'genre_id' => '4',
+            'poster' => 'movie-04.jpg',
+            'synopsis' => 'A spy, Twilight, creates a fake family for a mission. He adopts Anya, a telepath, and marries Yor, an assassin. Unaware of each others true identities, they navigate life balancing secret missions and family dynamics.',
+        ]);
+
+        Movie::create([
+            'id' => 5,
+            'title' => 'Attack on Titan',
+            'genre_id' => '5',
+            'poster' => 'movie-05.jpeg',
+            'synopsis' => 'Humanity battles for survival against giant humanoid Titans. Eren Yeager and his friends join the military to fight these creatures and uncover dark secrets about the Titans and their world.',
+        ]);
     }
 }
