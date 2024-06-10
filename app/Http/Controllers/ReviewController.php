@@ -37,6 +37,27 @@ class ReviewController extends Controller
         return redirect('/reviews')->with('success', 'Review added successfully!');
     }
 
+    public function edit(Review $review)
+    {
+        $movies = Movie::all();
+        return view('reviews.edit', compact('review', 'movies'));
+    }
+
+    public function update(Request $request, Review $review)
+    {
+        $validatedData = $request->validate([
+            'movie_id' => 'required',
+            'poster' => 'required',
+            'user' => 'required',
+            'rating' => 'required',
+            'date' => 'required',
+        ]);
+
+        $review->update($validatedData);
+
+        return redirect('/reviews')->with('success', 'review updated successfully!');
+    }
+
     public function destroy(Review $review)
     {
         $review->delete();
