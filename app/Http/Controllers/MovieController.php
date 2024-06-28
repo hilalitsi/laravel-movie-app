@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use App\Models\Genre;
-use App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MovieController extends Controller
 {
@@ -27,9 +27,17 @@ class MovieController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'genre_id' => 'required',
-            'poster' => 'required',
+            'poster' => 'required | image',
             'synopsis' => 'required',
         ]);
+
+        if ($request->hasFile('poster')) {
+            $extension = $request->file('poster')->getClientOriginalExtension();
+            $imgName = time() . '.' . $extension;
+
+            $request->file('poster')->storeAs('src/images/movie', $imgName, 'public');
+            $validatedData['poster'] = $imgName;
+        }
 
         Movie::create($validatedData);
 
@@ -47,18 +55,30 @@ class MovieController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'genre_id' => 'required',
-            'poster' => 'required',
+            'poster' => 'nullable|image',
             'synopsis' => 'required',
         ]);
+
+        if ($request->hasFile('poster')) {
+            // Delete the old image
+            Storage::disk('public')->delete('src/images/movie/' . $movie->poster);
+
+            // Upload the new image
+            $imageName = time() . '.' . $request->file('poster')->getClientOriginalExtension();
+            $request->file('poster')->storeAs('src/images/movie', $imageName, 'public');
+            $validatedData['poster'] = $imageName;
+        }
 
         $movie->update($validatedData);
 
         return redirect('/movies')->with('success', 'Movie updated successfully!');
     }
-
-    public function destroy(Movie $movie)
+    
+        public function destroy(Movie $movie)
     {
-        $movie->delete();
+        $poster = Storage::disk('public')->delete('src/images/movie/' . $movie->poster);
+
+        $movie->delete($poster);
         return redirect('/movies')->with('success', 'Movie deleted successfully!');
     }
 }
